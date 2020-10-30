@@ -13,18 +13,52 @@
   --color-yellow: #fff7d1;
   --color-orange: #feb546;
   --color-black: #000000;
-  
+
   /*font size*/
-  --font-large: 48px
-  --font-medium: 28px 
-  --font-regular: 18px
-  --font-small: 14px
-  --font-micro: 12px
+  --font-large: 48px;
+  --font-medium: 28px;
+  --font-regular: 18px;
+  --font-small: 14px;
+  --font-micro: 12px;
 
   /*font weight*/
-  --weight-bold: 700
-  --weight-semi-bold:600
-  --weigth-regular: 400
-  
+  --weight-bold: 700;
+  --weight-semi-bold: 600;
+  --weigth-regular: 400;
+
   /*size*/
+}
+
+/*Universal Tag*/
+* {
+  box-sizing: border-box;
+}
+
+/*Typography*/
+h1 {
+  font-size: var(--font-large);
+  font-weight: var(--weight-bold);
+  color: var(--color-black);
+  margin: 16px 0px;
+}
+
+h2 {
+  font-size: var(--font-medium);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-black);
+  margin: 8px 0px;
+}
+
+h3 {
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
+  color: var(--color-black);
+  margin: 8px 0px;
+}
+
+p {
+  font-size: var(--font-regular);
+  font-weight: var(--weigth-regular);
+  color: var(--color-black);
+  margin: 4px 0px;
 }

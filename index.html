@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>simon's portfolio</title>
+    <title>Simon's Portfolio</title>
 
     <meta name="description" content="First Frontend Project" />
     <meta name="author" content="Simon" />
@@ -20,21 +20,21 @@
     <!-- navbar -->
     <nav id="navbar">
       <div class="navbar__logo">
-        <i class="fab fa-logo"></i>
+        <img src="imgs/favicon.png" alt="brand logo" class="navbar__logo__icon"></img>
         <a href="#">Simon</a>
       </div>
       <ul class="navbar__menu">
-        <li>Home</li>
-        <li>About</li>
-        <li>Skills</li>
-        <li>My Work</li>
-        <li>Testimonials</li>
-        <li>Contact</li>
+        <li class="navbar__menu__item">Home</li>
+        <li class="navbar__menu__item">About</li>
+        <li class="navbar__menu__item">Skills</li>
+        <li class="navbar__menu__item">My Work</li>
+        <li class="navbar__menu__item">Testimonials</li>
+        <li class="navbar__menu__item">Contact</li>
       </ul>
     </nav>
     <!-- Home -->
     <section id="home">
-      <img src="" alt="" id="home__avatar" />
+      <img src="img/profile" alt="profile photo" class="home__profile"/>
       <h1 class="home__title">Hello,<br />I'm Simon</h1>
       <h2 class="home__description">
         A software Engineer currently residing in Gimpo.
@@ -52,43 +52,49 @@
         justo at, auctor nunc. Phasellus ligula ipsum, volutpat eget semper id,
         viverra eget nibh. Suspendisse luctus mattis cur
       </p>
-      <div class="about__jobs">
-        <div id="job">
-          <img src="" alt="" class="job_logo" />
-          <p class="job_name">Front-end</p>
-          <p class="job_period">
+      <div class="about__majors">
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-html5"></i>
+          </div>
+          <h2 class="major__title">Front-end</h2>
+          <p class="major__description">
             HTML, CSS, JavaScript, TypeScript, React, Vue, Web APIs
           </p>
         </div>
-        <div class="job">
-          <img src="" alt="" class="job_logo" />
-          <p class="job_name">Mobile</p>
-          <p class="job_period">
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-css3"></i>
+          </div>
+          <h2 class="major__title">Mobile</h2>
+          <p class="major__description">
             Android, iOS, React Native, Flutter, Java, Swift, Kotiln
           </p>
         </div>
-        <div class="job">
-          <img src="" alt="" class="job_logo" />
-          <p class="job_name">Back-end</p>
-          <p class="job_period">
+        <div class="major">
+          <div class="major__icon">
+            <i class="fab fa-js"></i>
+          </div>
+          <h2 class="major__title">Back-end</h2>
+          <p class="major__description">
             Java, JavaScript, Go, NodeJS, Rest APIs, GraphGL
           </p>
         </div>
       </div>
       <div class="about_careers">
-        <div id="career">
-          <img src="" alt="" class="career_logo" />
-          <p class="career_description">
-            Currently working at Samsung as Software Engineer
+        <div class="career">
+          <img src="imgs/hanyang.png" alt="hanyang univ" class="career__logo" />
+          <p class="career__name">
+            Currently studying at Hanyang University Computer Science Engineering Department
           </p>
-          <p class="career_period">2019 Sept - Until now</p>
+          <p class="career__period">2016 Feb - Until now</p>
         </div>
         <div class="career">
-          <img src="" alt="" class="career_logo" />
-          <p class="career_description">
-            Currently working at Samsung as Software Engineer
+          <img src="imgs/hanyang.png" alt="hanyang univ" class="career__logo" />
+          <p class="career__name">
+            Currently studying at Hanyang University Computer Science Engineering Department
           </p>
-          <p class="career_period">2019 Sept - Until now</p>
+          <p class="career__period">2016 Feb - Until now</p>
         </div>
       </div>
     </section>
@@ -103,87 +109,202 @@
         and independently. Ability to plan and time schedule, work under strict
         time pressure and adapt quickly when needed.
       </p>
-      <div class="skills_progressBar">
-        <h3>Skills</h3>
-        <div class="progressBar">
-          <p>HTML</p>
-          <p>99%</p>
+      <div class="skillSet">
+        <div class="skillSet__left">
+          <h3>Skills</h3>
+          <div class="skill">
+            <div class="skill__description">
+              <span>HTML</span>
+              <span>99%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill__description">
+              <span>CSS</span>
+              <span>90%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill__description">
+              <span>JavaScipt</span>
+              <span>90%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill__description">
+              <span>TypeScript</span>
+              <span>80%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill__description">
+              <span>React</span>
+              <span>88%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value"></div>
+            </div>
+          </div>
+          <div class="skill">
+            <div class="skill__description">
+              <span>NodeJS</span>
+              <span>77%</span>
+            </div>
+            <div class="skill__bar">
+              <div class="skill__value"></div>
+            </div>
+          </div>
         </div>
-        <div class="progressBar">
-          <p>CSS</p>
-          <p>90%</p>
+        <div class="skillSet_right">
+          <div class="tools">
+            <h3>Tools</h3>
+            <ul class="tools__list">
+              <li>Visula Studio Code</li>
+              <li>IntelliJ</li>
+              <li>Android Studio Code</li>
+              <li>iOS development tools</li>
+              <li>Sketch app</li>
+            </ul>
+          </div>
+          <div class="etc">
+            <h3>Etc</h3>
+            <ul class="etc__list">
+              <li>Git</li>
+            </ul>
+          </div>
         </div>
-        <div class="progressBar">
-          <p>JAVASCRIPT</p>
-          <p>90%</p>
-        </div>
-        <div class="progressBar">
-          <p>TYPESCRIPT</p>
-          <p>80%</p>
-        </div>
-        <div class="progressBar">
-          <p>REACT</p>
-          <p>88%</p>
-        </div>
-        <div class="progressBar">
-          <p>NODEJS</p>
-          <p>77%</p>
-        </div>
-      </div>
-      <div class="skills_tools">
-        <h3>Tools</h3>
-        <p>
-          Android development tools <br />iOS development tools <br />Sublime
-          Text with Plug-ings <br />Visual Studio <br />Team Foundation
-          <br />Adobe Programs <br />Sketch app
-        </p>
-      </div>
-      <div class="skills_etc">
-        <h3>Etc</h3>
-        <p>Git</p>
       </div>
     </section>
 
     <!-- My Work -->
-    <section id="myWork">
+    <section id="work">
       <h1>My work</h1>
-      <h2>Projects</h2>
-      <button class="work_menu"></button>
-      <button class="work_menu"></button>
-      <button class="work_menu"></button>
-      <button class="work_menu"></button>
+      <h3>Projects</h3>
+      <div class="work__menu">
+        <button class="menu__btn">All <span class="menu__count">8</span></button>
+        <button class="menu__btn">Front-end<span class="menu__count">3</span></button>
+        <button class="menu__btn">Back-end<span class="menu__count">3</span></button>
+        <button class="menu__btn">Mobile<span class="menu__count">3</span></button>
+      </div>
 
-      <div class="work_image"></div>
-      <div class="work_image"></div>
-      <div class="work_image"></div>
-      <div class="work_image"></div>
-      <div class="work_image"></div>
-      <div class="work_image"></div>
-      <div class="work_image"></div>
-      <div class="work_image"></div>
+      <div class="work__projects">
+        <a href="" target="blank" class="project">
+          <img src="imgs/navbar.png" alt="navbar" class="project__img">
+          <div class="project__description">
+            <h3>Responsive Navbar</h3>
+            <span>HTML, CSS, JS</span>
+          </div>
+        </a>
+        <a href="" target="blank" class="project">
+          <img src="imgs/navbar.png" alt="navbar" class="project__img">
+          <div class="project__description">
+            <h3>Responsive Navbar</h3>
+            <span>HTML, CSS, JS</span>
+          </div>
+        </a>
+        <a href="" target="blank" class="project">
+          <img src="imgs/navbar.png" alt="navbar" class="project__img">
+          <div class="project__description">
+            <h3>Responsive Navbar</h3>
+            <span>HTML, CSS, JS</span>
+          </div>
+        </a>
+        <a href="" target="blank" class="project">
+          <img src="imgs/navbar.png" alt="navbar" class="project__img">
+          <div class="project__description">
+            <h3>Responsive Navbar</h3>
+            <span>HTML, CSS, JS</span>
+          </div>
+        </a>
+        <a href="" target="blank" class="project">
+          <img src="imgs/navbar.png" alt="navbar" class="project__img">
+          <div class="project__description">
+            <h3>Responsive Navbar</h3>
+            <span>HTML, CSS, JS</span>
+          </div>
+        </a>
+        <a href="" target="blank" class="project">
+          <img src="imgs/navbar.png" alt="navbar" class="project__img">
+          <div class="project__description">
+            <h3>Responsive Navbar</h3>
+            <span>HTML, CSS, JS</span>
+          </div>
+        </a>
+        <a href="" target="blank" class="project">
+          <img src="imgs/navbar.png" alt="navbar" class="project__img">
+          <div class="project__description">
+            <h3>Responsive Navbar</h3>
+            <span>HTML, CSS, JS</span>
+          </div>
+        </a>
+        <a href="" target="blank" class="project">
+          <img src="imgs/navbar.png" alt="navbar" class="project__img">
+          <div class="project__description">
+            <h3>Responsive Navbar</h3>
+            <span>HTML, CSS, JS</span>
+          </div>
+        </a> 
+      </div>
     </section>
 
     <!-- Testimonials -->
     <section id="testimonials">
       <h1>Testimonials</h1>
-      <h2>See what they say about me</h2>
-      <div class="testimonial">
-        <img src="" alt="" class="testimonial_image" />
-        <div>
-          <p></p>
-          <p></p>
+      <h3>See what they say about me</h3>
+      <div class="testimonials">
+        <div class="testimonial">
+          <img src="imgs/people1.jpg" alt="profile" class="testimonial__avatar" />
+          <div class="testimonial__speechBubble">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+            fuga libero nulla eveniet aperiam laborum, quis provident
+            quibusdam officiis reprehenderit, placeat neque perspiciatis vero
+            explicabo tempora, dignissimos accusantium inventore ducimus!
+            </p>
+            <p class="testimonial__name"><a href="">Ellie</a> / Samsung</p>
+          </div>
+        </div>
+        <div class="testimonial">
+          <img src="imgs/people1.jpg" alt="profile" class="testimonial__avatar" />
+          <div class="testimonial__speechBubble">
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+            fuga libero nulla eveniet aperiam laborum, quis provident
+            quibusdam officiis reprehenderit, placeat neque perspiciatis vero
+            explicabo tempora, dignissimos accusantium inventore ducimus!
+            </p>
+            <p class="testimonial__name"><a href="">Ellie</a> / Samsung</p>
+          </div>
         </div>
       </div>
     </section>
     <!-- Contact -->
     <section id="contact">
       <h1>Let's talk</h1>
-      <p>dream.coder.ellie@gmail.com</p>
-      <div>
-        <img src="" alt="" />
-        <img src="" alt="" />
+      <h3>wodydthk7@gmail.com</h3>
+      <div class="contact__links">
+        <a href="https://github.com/wodydthk7" target="black">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100005575453745" target="black">
+          <i class="fab fa-facebook"></i>
+        </a>
       </div>
-      <p>2020 Dream Coding Ellie - All rights reserved</p>
+      <p class="contact__right">
+        2020 Dream Coding Ellie - All rights reserved
+      </p>
     </section>
   </body>
 </html>

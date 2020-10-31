@@ -50,6 +50,13 @@ ul {
   padding-left: 0;
 }
 
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
 /*Typography*/
 h1 {
   font-size: var(--font-large);
@@ -84,25 +91,21 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
   background-color: var(--color-pink);
 }
 
 .navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
-}
-
-.navbar__logo a {
-  line-height: 100;
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
 }
 
 .navbar__logo img {
   width: 60px;
   height: 60px;
-  position: relative;
-  top: 20px;
-  left: 5px;
+  object-fit: cover;
 }
 
 .navbar__menu {
@@ -123,4 +126,34 @@ p {
 
 .navbar__menu__item:hover {
   background-color: var(--color-dark-pink);
+}
+
+/* Home */
+#home {
+  background: url('imgs/home-background.png') center/cover no-repeat;
+  padding: 40px;
+  text-align: center;
+}
+
+.home__profile {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px;
+}
+
+.home__title,
+.home__description {
+  color: var(--color-white);
+}
+
+.home__contact {
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  border-radius: var(--size-border-radius);
+  padding: 8px 12px;
+  margin: 24px;
+  font-size: var(--font-regular);
+  font-weight: var(--weight-semi-bold);
 }

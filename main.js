@@ -22,13 +22,16 @@ navbarMenu.addEventListener('click', (event) => {
         return;
     }
 
-    var scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: "smooth", block: "center"});
+    scrollIntoViewSmooth(link);
 });
 
 // handle contactMe button
 const contactMeBtn = document.querySelector('.home__contact');
 contactMeBtn.addEventListener('click', () => {
-    const contact = document.querySelector('#contact');
-    contact.scrollIntoView({behavior: "smooth"});
+    scrollIntoViewSmooth('#contact');
 });
+
+function scrollIntoViewSmooth(selector) {
+    const element = document.querySelector(selector);
+    element.scrollIntoView({behavior: "smooth"});
+}

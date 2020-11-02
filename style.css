@@ -94,10 +94,10 @@ p {
 .section {
   padding: 40px;
   text-align: center;
-  margin: auto;
 }
 
 .section__container {
+  margin: auto;
   max-width: 1200px;
 }
 

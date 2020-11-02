@@ -467,7 +467,7 @@ p {
   width: 80px;
   height: 80px;
   line-height: 80px;
-  font-size: 50px;
+  font-size: var(--font-large);
   transition: all var(--animation-duration) ease-in;
 }
 

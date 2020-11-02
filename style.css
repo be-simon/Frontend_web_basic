@@ -108,6 +108,10 @@ p {
   align-items: center;
   background-color: var(--color-pink);
   padding: 0 16px;
+  position: sticky;
+  top: 0px;
+  border-bottom: 2px solid var(--color-light-white);
+  z-index: 1;
 }
 
 .navbar__logo {
@@ -144,6 +148,15 @@ p {
   background-color: var(--color-dark-pink);
 }
 
+.navbar__toggle-btn {
+  position: absolute;
+  right: 32px;
+  font-size: 28px;
+  top: 14px;
+  color: var(--color-white);
+  display: none;
+}
+
 /* Home */
 #home {
   background: url('imgs/home-background.png') center/cover no-repeat;
@@ -176,7 +189,7 @@ p {
 .about__majors {
   display: flex;
   justify-content: space-evenly;
-  margin: 80px 0;
+  margin: 60px 0;
 }
 
 .major__icon {
@@ -407,6 +420,10 @@ p {
   background-color: var(--color-light-white);
 }
 
+.testimonials {
+  margin-top: 60px;
+}
+
 .testimonial {
   display: flex;
   margin: 32px 0;
@@ -485,4 +502,46 @@ p {
 
 .contact__rights {
   font-size: var(--font-small);
+}
+
+/* below 768px screen */
+@media screen and (max-width: 768px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    display: none;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+
+  .major {
+    margin: 16px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .work__menu {
+    flex-direction: column;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+
+  .testimonial__avatar {
+    width: 80px;
+    height: 80px;
+  }
 }

@@ -31,17 +31,36 @@ contactMeBtn.addEventListener('click', () => {
     scrollIntoViewSmooth('#contact');
 });
 
-function scrollIntoViewSmooth(selector) {
-    const element = document.querySelector(selector);
-    element.scrollIntoView({behavior: "smooth"});
-}
-
 // home transparent
 const homeContainer = document.querySelector('#home .section__container');
 const homeElementSize = homeContainer.getBoundingClientRect();
 
 document.addEventListener('scroll', () => {    
-    if(window.scrollY > homeElementSize.y && window.scrollY < homeElementSize.bottom) {
-        homeContainer.style.opacity = 1 - ((window.scrollY / homeElementSize.height))
+    homeContainer.style.opacity = 1 - ((window.scrollY / homeElementSize.height));
+});
+
+// arrow btn 
+const arrowBtn = document.querySelector('.arrow-btn');
+arrowBtn.addEventListener('click', () => {
+    window.scrollTo({top: 0, behavior: "smooth"});
+});
+
+document.addEventListener('scroll', () => {
+    if(window.scrollY > 0) {
+        arrowBtn.classList.add('visible');
+    } else {
+        arrowBtn.classList.remove('visible');
     }
 });
+
+
+
+
+
+
+
+// Custom Method
+function scrollIntoViewSmooth(selector) {
+    const element = document.querySelector(selector);
+    element.scrollIntoView({behavior: "smooth"});
+}

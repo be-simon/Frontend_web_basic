@@ -517,6 +517,28 @@ p {
   font-size: var(--font-small);
 }
 
+/* Arrow up */
+.arrow-btn {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  line-height-step: 60px;
+  font-size: 40px;
+  bottom: 40px;
+  right: 30px;
+  color: var(--color-white);
+  background-color: var(--color-orange);
+  border-radius: 50%;
+  transition: all var(--animation-duration) ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.arrow-btn.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 /* below 768px screen */
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {

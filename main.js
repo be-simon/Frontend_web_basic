@@ -35,3 +35,13 @@ function scrollIntoViewSmooth(selector) {
     const element = document.querySelector(selector);
     element.scrollIntoView({behavior: "smooth"});
 }
+
+// home transparent
+const homeContainer = document.querySelector('#home .section__container');
+const homeElementSize = homeContainer.getBoundingClientRect();
+
+document.addEventListener('scroll', () => {    
+    if(window.scrollY > homeElementSize.y && window.scrollY < homeElementSize.bottom) {
+        homeContainer.style.opacity = 1 - ((window.scrollY / homeElementSize.height))
+    }
+});

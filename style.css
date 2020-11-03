@@ -168,6 +168,11 @@ p {
 #home {
   background: url('imgs/home-background.png') center/cover no-repeat;
   padding-top: 100px;
+  transition: all var(--animation-duration) ease-in;
+}
+
+.section.home__scroll {
+  background-color: transparent;
 }
 
 .home__profile {

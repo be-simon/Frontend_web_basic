@@ -46,16 +46,12 @@ arrowBtn.addEventListener('click', () => {
 });
 
 document.addEventListener('scroll', () => {
-    if(window.scrollY > 0) {
+    if(window.scrollY > homeElementSize.bottom / 2) {
         arrowBtn.classList.add('visible');
     } else {
         arrowBtn.classList.remove('visible');
     }
 });
-
-
-
-
 
 
 

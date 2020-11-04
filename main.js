@@ -28,7 +28,7 @@ navbarMenu.addEventListener('click', (event) => {
 // navbar menu active 
 navbarMenu.addEventListener('click', (event) => {
     var navbarActive = document.querySelector('.navbar__menu__item.active');
-
+    
     if(navbarActive != event.target) {
         event.target.classList.add('active');
         navbarActive.classList.remove('active')
@@ -40,6 +40,46 @@ const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 navbarToggleBtn.addEventListener('click', () => {
     navbarMenu.classList.toggle('toggle');
 })
+
+// navbar active change by scrolling
+// const sections = document.querySelectorAll('.section');
+// const navbarMenuItems = document.querySelectorAll('.navbar__menu__item');
+// var currentPosition;
+// document.addEventListener('scroll', () => {
+//     var link;
+
+//     for(var i = 0; i < sections.length; i++) {
+
+//         if(window.scrollY < sections[i].offsetTop + sections[i].getBoundingClientRect().height) {
+//             link = sections[i].dataset.link;
+//             console.log(link)
+//             console.log(window.scrollY);
+//             break;
+//         }
+//     }
+    
+//     if(link == currentPosition) {
+//         return;
+//     } else {
+//         currentPosition = link;
+
+//         var navbarActive = document.querySelector('.navbar__menu__item.active');
+        
+//         for(var i = 0; i < navbarMenuItems.length; i++) {
+//             if (navbarMenuItems[i].dataset.link == link) {
+//                 navbarMenuItems[i].classList.add('active');
+                
+//                 break;
+//             }
+//         }
+//     }
+//     navbarActive.classList.remove('active');
+// })
+
+
+
+
+
 
 // handle contactMe button
 const contactMeBtn = document.querySelector('.home__contact');
@@ -101,6 +141,8 @@ document.addEventListener('scroll', () => {
         arrowBtn.classList.remove('visible');
     }
 });
+
+
 
 
 // Custom Method

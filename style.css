@@ -142,6 +142,7 @@ p {
 .navbar__menu__item {
   padding: 8px 12px;
   margin: 0 4px;
+  height: 100%;
   color: var(--color-white);
   cursor: pointer;
   border-radius: var(--size-border-radius);
@@ -387,7 +388,7 @@ p {
 
 .work__projects.animate-out {
   opacity: 0;
-  transform: scale(0.96);
+  transform: scale(0.96) translateY(20px);
 }
 
 .project {
@@ -444,6 +445,7 @@ p {
 /* Testimonials */
 #testimonials {
   background-color: var(--color-light-white);
+  transition: all var(--animation-duration) ease;
 }
 
 .testimonials {
@@ -560,12 +562,17 @@ p {
 
   #navbar {
     flex-direction: column;
+    background-color: var(--color-pink);
   }
 
   .navbar__menu {
     flex-direction: column;
     text-align: center;
     display: none;
+  }
+
+  .navbar__menu.toggle {
+    display: block;
   }
 
   .about__majors {

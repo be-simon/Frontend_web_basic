@@ -25,6 +25,22 @@ navbarMenu.addEventListener('click', (event) => {
     scrollIntoViewSmooth(link);
 });
 
+// navbar menu active 
+navbarMenu.addEventListener('click', (event) => {
+    var navbarActive = document.querySelector('.navbar__menu__item.active');
+
+    if(navbarActive != event.target) {
+        event.target.classList.add('active');
+        navbarActive.classList.remove('active')
+    }
+})
+
+// navbar toggle button
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', () => {
+    navbarMenu.classList.toggle('toggle');
+})
+
 // handle contactMe button
 const contactMeBtn = document.querySelector('.home__contact');
 contactMeBtn.addEventListener('click', () => {
@@ -37,6 +53,39 @@ const homeElementSize = homeContainer.getBoundingClientRect();
 
 document.addEventListener('scroll', () => {    
     homeContainer.style.opacity = 1 - ((window.scrollY / homeElementSize.height));
+});
+
+// work menu filtering & animating & active
+const workMenu = document.querySelector('.work__menu');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+var lastSelected;
+
+workMenu.addEventListener('mouseover', (event) => {
+    var target = event.target;
+    var btnType = target.dataset.btnType ;
+    var active = document.querySelector('.menu__btn.active');
+    
+    if(btnType == null || btnType == lastSelected || target == active) {
+        return;
+    } else {
+        lastSelected = btnType;
+        projectContainer.classList.add('animate-out');
+
+        active.classList.remove('active');
+        event.target.classList.add('active');
+    }
+    
+    setTimeout(() => {
+        projects.forEach((project) => {
+            if(btnType === "*" || project.dataset.projectType == btnType ) {
+                project.classList.remove('invisible');
+            } else {
+                project.classList.add('invisible');
+            }
+        })
+        projectContainer.classList.remove('animate-out');
+    }, 200)
 });
 
 // arrow btn 
@@ -52,39 +101,6 @@ document.addEventListener('scroll', () => {
         arrowBtn.classList.remove('visible');
     }
 });
-
-// work menu filtering & animating
-const workMenu = document.querySelector('.work__menu');
-const projectContainer = document.querySelector('.work__projects');
-const projects = document.querySelectorAll('.project');
-var lastSelected;
-// projectContainer.classList.add('.animate-in');
-
-
-workMenu.addEventListener('mouseover', (event) => {
-    
-    var workMenuBtn = event.target.dataset.workMenuBtn ;
-    // || event.target.parentNode.dataset.workMenuBtn;
-    
-    if(workMenuBtn == null || workMenuBtn == lastSelected) {
-        return;
-    } else {
-        lastSelected = workMenuBtn;
-        projectContainer.classList.add('animate-out');
-    }
-    
-    setTimeout(() => {
-        projects.forEach((project) => {
-            if(workMenuBtn === "*" || project.dataset.projectType == workMenuBtn ) {
-                project.classList.remove('invisible');
-            } else {
-                project.classList.add('invisible');
-            }
-        })
-        projectContainer.classList.remove('animate-out');
-    }, 200)
-});
-
 
 
 // Custom Method

@@ -380,6 +380,14 @@ p {
   flex-wrap: wrap;
   justify-content: center;
   align-content: space-between;
+  transition: all var(--animation-duration) ease-in-out;
+  opacity: 1;
+  transform: scale(1);
+}
+
+.work__projects.animate-out {
+  opacity: 0;
+  transform: scale(0.96);
 }
 
 .project {
@@ -389,6 +397,7 @@ p {
   height: 250px;
   padding: 8px;
   position: relative;
+  transition: all var(--animation-duration) ease-in;
 }
 
 .project.invisible {

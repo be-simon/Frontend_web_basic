@@ -53,28 +53,38 @@ document.addEventListener('scroll', () => {
     }
 });
 
-// work menu filtering
+// work menu filtering & animating
 const workMenu = document.querySelector('.work__menu');
+const projectContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
 var lastSelected;
+// projectContainer.classList.add('.animate-in');
+
+
 workMenu.addEventListener('mouseover', (event) => {
-    var workMenuBtn = event.target.dataset.workMenuBtn ;
-        // || event.target.parentNode.dataset.workMenuBtn;
     
-    if(workMenuBtn == null) {
-        workMenuBtn = lastSelected;
+    var workMenuBtn = event.target.dataset.workMenuBtn ;
+    // || event.target.parentNode.dataset.workMenuBtn;
+    
+    if(workMenuBtn == null || workMenuBtn == lastSelected) {
+        return;
     } else {
         lastSelected = workMenuBtn;
+        projectContainer.classList.add('animate-out');
     }
     
-    projects.forEach((project) => {
-        if(workMenuBtn === "*" || project.dataset.projectType == workMenuBtn ) {
-            project.classList.remove('invisible');
-        } else {
-            project.classList.add('invisible');
-        }
-    })
-})
+    setTimeout(() => {
+        projects.forEach((project) => {
+            if(workMenuBtn === "*" || project.dataset.projectType == workMenuBtn ) {
+                project.classList.remove('invisible');
+            } else {
+                project.classList.add('invisible');
+            }
+        })
+        projectContainer.classList.remove('animate-out');
+    }, 200)
+});
+
 
 
 // Custom Method

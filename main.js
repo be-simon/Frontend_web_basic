@@ -53,6 +53,28 @@ document.addEventListener('scroll', () => {
     }
 });
 
+// work menu filtering
+const workMenu = document.querySelector('.work__menu');
+const projects = document.querySelectorAll('.project');
+var lastSelected;
+workMenu.addEventListener('mouseover', (event) => {
+    var workMenuBtn = event.target.dataset.workMenuBtn ;
+        // || event.target.parentNode.dataset.workMenuBtn;
+    
+    if(workMenuBtn == null) {
+        workMenuBtn = lastSelected;
+    } else {
+        lastSelected = workMenuBtn;
+    }
+    
+    projects.forEach((project) => {
+        if(workMenuBtn === "*" || project.dataset.projectType == workMenuBtn ) {
+            project.classList.remove('invisible');
+        } else {
+            project.classList.add('invisible');
+        }
+    })
+})
 
 
 // Custom Method

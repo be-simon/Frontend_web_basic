@@ -158,9 +158,9 @@ p {
 
 .navbar__toggle-btn {
   position: absolute;
-  right: 32px;
-  font-size: 28px;
-  top: 14px;
+  right: 20px;
+  font-size: 20px;
+  top: 8px;
   color: var(--color-white);
   display: none;
 }
@@ -299,6 +299,7 @@ p {
 .skill__description {
   display: flex;
   justify-content: space-between;
+  font-size: var(--font-small);
 }
 
 .skill__bar {
@@ -327,6 +328,7 @@ p {
 .tools__list li,
 .etc__list li {
   margin: 4px;
+  font-size: var(--font-small);
 }
 
 .etc {
@@ -336,8 +338,10 @@ p {
 /* My Work */
 .work__menu {
   display: flex;
-  margin: 16px 180px;
+  margin: 16px auto;
+  max-width: 800px;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .menu__btn {
@@ -537,7 +541,7 @@ p {
   position: fixed;
   width: 60px;
   height: 60px;
-  line-height-step: 60px;
+  line-height: 60px;
   font-size: 40px;
   bottom: 40px;
   right: 30px;
@@ -556,13 +560,38 @@ p {
 
 /* below 768px screen */
 @media screen and (max-width: 768px) {
+  :root {
+    /*font size*/
+    --font-large: 30px;
+    --font-medium: 20px;
+    --font-regular: 12px;
+    --font-small: 10px;
+    --font-micro: 8px;
+  }
+
+  /* section */
+  .section {
+    padding: 15px;
+  }
+
+  /* navbar */
+  #navbar {
+    flex-direction: column;
+    background-color: var(--color-pink);
+  }
+
   .navbar__toggle-btn {
     display: block;
   }
 
-  #navbar {
-    flex-direction: column;
-    background-color: var(--color-pink);
+  .navbar__logo {
+    height: 40px;
+    transform: translateX(-10px);
+  }
+
+  .navbar__logo img {
+    width: 40px;
+    height: 40px;
   }
 
   .navbar__menu {
@@ -575,28 +604,80 @@ p {
     display: block;
   }
 
+  /* home */
+  #home {
+    padding-top: 70px;
+  }
+  .home__profile {
+    width: 200px;
+    height: 200px;
+  }
+
+  .home__contact {
+    margin: 10px;
+  }
+
+  /* about me */
   .about__majors {
     flex-direction: column;
+    margin: 20px;
   }
 
   .major {
     margin: 16px;
   }
 
-  .skillset {
-    flex-direction: column;
+  .major__icon {
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    font-size: 60px;
   }
 
+  .major__title,
+  .major__description {
+    margin: 0 30px;
+  }
+
+  /* skills */
+  .skillset {
+    flex-direction: column;
+    margin: 16px 0;
+  }
+
+  .skillset__left,
+  .tools,
+  .etc {
+    padding: 8px 40px;
+  }
+
+  /* my work */
   .work__menu {
     flex-direction: column;
+    max-width: 200px;
+    margin: 16px auto;
   }
 
   .project {
     flex-grow: 1;
   }
 
+  /* testimonials */
   .testimonial__avatar {
     width: 80px;
     height: 80px;
+  }
+
+  .testimonials {
+    margin-top: 20px;
+  }
+
+  .arrow-btn {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 25px;
+    bottom: 30px;
+    right: 15px;
   }
 }

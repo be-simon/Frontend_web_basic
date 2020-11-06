@@ -33,6 +33,8 @@ navbarMenu.addEventListener('click', (event) => {
         event.target.classList.add('active');
         navbarActive.classList.remove('active')
     }
+
+    navbarMenu.classList.toggle('toggle');
 })
 
 // navbar toggle button
@@ -40,6 +42,15 @@ const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 navbarToggleBtn.addEventListener('click', () => {
     navbarMenu.classList.toggle('toggle');
 })
+
+// remove toggle menu
+document.addEventListener('click', (event) => {
+    if(navbarMenu.classList.contains('toggle')) {
+        if(event.clientY > navbar.getBoundingClientRect().height) {
+            navbarMenu.classList.remove('toggle');
+        }
+    }
+});
 
 // navbar active change by scrolling
 // const sections = document.querySelectorAll('.section');

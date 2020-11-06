@@ -92,7 +92,7 @@ p {
 
 /* Section */
 .section {
-  padding: 40px;
+  padding: 48px;
   padding-top: 60px;
   text-align: center;
 }
@@ -484,14 +484,19 @@ p {
   background-color: var(--color-white);
   padding: 20px;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .testimonial__speech_bubble p {
   color: var(--color-light-grey);
+  text-align: left;
 }
 
 .testimonial__name {
   font-size: var(--font-small);
-  margin: 8px 0;
+  align-self: flex-end;
 }
 
 .testimonial__name a {

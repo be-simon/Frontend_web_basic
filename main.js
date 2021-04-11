@@ -53,18 +53,27 @@ document.addEventListener('click', (event) => {
 });
 
 // navbar active change by scrolling
-// section의 top부분을 기준으로 하니 싱크가 살짝 안맞는다. 중간으로 해야할까?
 const sections = document.querySelectorAll('.section');
 const navbarMenuItems = document.querySelectorAll('.navbar__menu__item');
-let currentPosition;
-let sectionsPosition = Array.prototype.slice.call(sections).map((s) => window.scrollY + s.getBoundingClientRect().top)
+let currentPosition = 0;
+let currentSectionIndex = 0;
+let sectionsPosition = Array.prototype.slice.call(sections).map((s) => window.scrollY + s.getBoundingClientRect().top - window.innerHeight / 4)
 
 document.addEventListener('scroll', () => {
     currentPosition = window.scrollY + navbar.getBoundingClientRect().height
     for (var i = 0; i < sectionsPosition.length; i++) {
-        if (currentPosition >= sectionsPosition[i] && (i == sectionsPosition.length - 1 || currentPosition < sectionsPosition[i + 1])) 
+        if (i == sectionsPosition.length - 1 && (currentPosition >= sectionsPosition[i] || (window.innerHeight + window.scrollY) >= document.body.offsetHeight))
+            //마지막 섹션은 경계를 지났을 때나, 섹션이 짧더라도 페이지의 바닥에 내려왔을 때는 선택한다.
+            currentSectionIndex = i
+        else if (currentPosition >= sectionsPosition[i] && currentPosition < sectionsPosition[i + 1]) 
+            // section 구간에 있을 때
+            currentSectionIndex = i    
+    }
+
+    for (i = 0; i < sectionsPosition.length; i ++){
+        if (i == currentSectionIndex)
             navbarMenuItems[i].classList.add('active')
-        else 
+        else
             navbarMenuItems[i].classList.remove('active')
     }
 })

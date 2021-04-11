@@ -53,43 +53,12 @@ document.addEventListener('click', (event) => {
 });
 
 // navbar active change by scrolling
-// const sections = document.querySelectorAll('.section');
-// const navbarMenuItems = document.querySelectorAll('.navbar__menu__item');
-// var currentPosition;
-// document.addEventListener('scroll', () => {
-//     var link;
-
-//     for(var i = 0; i < sections.length; i++) {
-
-//         if(window.scrollY < sections[i].offsetTop + sections[i].getBoundingClientRect().height) {
-//             link = sections[i].dataset.link;
-//             console.log(link)
-//             console.log(window.scrollY);
-//             break;
-//         }
-//     }
+const sections = document.querySelectorAll('.section');
+const navbarMenuItems = document.querySelectorAll('.navbar__menu__item');
+var currentPosition;
+document.addEventListener('scroll', () => {
     
-//     if(link == currentPosition) {
-//         return;
-//     } else {
-//         currentPosition = link;
-
-//         var navbarActive = document.querySelector('.navbar__menu__item.active');
-        
-//         for(var i = 0; i < navbarMenuItems.length; i++) {
-//             if (navbarMenuItems[i].dataset.link == link) {
-//                 navbarMenuItems[i].classList.add('active');
-                
-//                 break;
-//             }
-//         }
-//     }
-//     navbarActive.classList.remove('active');
-// })
-
-
-
-
+})
 
 
 // handle contactMe button

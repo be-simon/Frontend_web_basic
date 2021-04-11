@@ -584,7 +584,7 @@ p {
   /* navbar */
   #navbar {
     flex-direction: column;
-    background-color: var(--color-pink);
+    background-color: var(--color-light-blue);
   }
 
   .navbar__toggle-btn {

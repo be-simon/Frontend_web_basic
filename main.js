@@ -53,11 +53,20 @@ document.addEventListener('click', (event) => {
 });
 
 // navbar active change by scrolling
+// section의 top부분을 기준으로 하니 싱크가 살짝 안맞는다. 중간으로 해야할까?
 const sections = document.querySelectorAll('.section');
 const navbarMenuItems = document.querySelectorAll('.navbar__menu__item');
-var currentPosition;
+let currentPosition;
+let sectionsPosition = Array.prototype.slice.call(sections).map((s) => window.scrollY + s.getBoundingClientRect().top)
+
 document.addEventListener('scroll', () => {
-    
+    currentPosition = window.scrollY + navbar.getBoundingClientRect().height
+    for (var i = 0; i < sectionsPosition.length; i++) {
+        if (currentPosition >= sectionsPosition[i] && (i == sectionsPosition.length - 1 || currentPosition < sectionsPosition[i + 1])) 
+            navbarMenuItems[i].classList.add('active')
+        else 
+            navbarMenuItems[i].classList.remove('active')
+    }
 })
 
 

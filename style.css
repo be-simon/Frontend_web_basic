@@ -168,7 +168,7 @@ p {
 
 /* Home */
 #home {
-  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), url('imgs/background.jpeg') center/cover ;
+  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), url('imgs/background.png') center/cover ;
   padding-top: 100px;
   transition: all var(--animation-duration) ease-in;
 }

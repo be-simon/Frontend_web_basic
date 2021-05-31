@@ -107,7 +107,7 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: transparent;
+  background-color: var(--color-light-blue);
   transition: all var(--animation-duration) ease-in-out;
   padding: 0 16px;
   position: fixed;
@@ -117,9 +117,9 @@ p {
   z-index: 1; /*레이어 맨 위로 올려줌*/
 }
 
-#navbar.navbar--dark {
-  background-color: var(--color-light-blue);
-  padding: 1px;
+#navbar.navbar--transparent {
+  background-color: transparent;
+  /* padding: 1px; */
 }
 
 .navbar__logo {
@@ -171,6 +171,7 @@ p {
   background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.6)), url('imgs/background.png') center/cover ;
   padding-top: 100px;
   transition: all var(--animation-duration) ease-in;
+  height: 100vh
 }
 
 .section.home__scroll {

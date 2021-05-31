@@ -1,84 +1,5 @@
 'use strict'
 
-// navbar scrolling
-const navbar = document.querySelector('#navbar');
-var navbarHeight = navbar.getBoundingClientRect().height;
-
-document.addEventListener('scroll', () => {
-    if(window.scrollY > navbarHeight) {
-        navbar.classList.add('navbar--dark');
-    } else {
-        navbar.classList.remove('navbar--dark')
-    }
-})
-
-// handle navbar button
-const navbarMenu = document.querySelector('.navbar__menu');
-navbarMenu.addEventListener('click', (event) => {
-    var target = event.target;
-    var link = target.dataset.link;
-
-    if(link == undefined) {
-        return;
-    }
-
-    scrollIntoViewSmooth(link);
-});
-
-// navbar menu active 
-navbarMenu.addEventListener('click', (event) => {
-    var navbarActive = document.querySelector('.navbar__menu__item.active');
-    
-    if(navbarActive != event.target) {
-        event.target.classList.add('active');
-        navbarActive.classList.remove('active')
-    }
-
-    navbarMenu.classList.toggle('toggle');
-})
-
-// navbar toggle button
-const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
-navbarToggleBtn.addEventListener('click', () => {
-    navbarMenu.classList.toggle('toggle');
-})
-
-// remove toggle menu
-document.addEventListener('click', (event) => {
-    if(navbarMenu.classList.contains('toggle')) {
-        if(event.clientY > navbar.getBoundingClientRect().height) {
-            navbarMenu.classList.remove('toggle');
-        }
-    }
-});
-
-// navbar active change by scrolling
-const sections = document.querySelectorAll('.section');
-const navbarMenuItems = document.querySelectorAll('.navbar__menu__item');
-let currentPosition = 0;
-let currentSectionIndex = 0;
-let sectionsPosition = Array.prototype.slice.call(sections).map((s) => window.scrollY + s.getBoundingClientRect().top)
-
-document.addEventListener('scroll', () => {
-    currentPosition = window.scrollY + navbar.getBoundingClientRect().height + window.innerHeight / 4
-    for (var i = 0; i < sectionsPosition.length; i++) {
-        if (i == sectionsPosition.length - 1 && (currentPosition >= sectionsPosition[i] || (window.innerHeight + window.scrollY) >= document.body.offsetHeight))
-            //마지막 섹션은 경계를 지났을 때나, 섹션이 짧더라도 페이지의 바닥에 내려왔을 때는 선택한다.
-            currentSectionIndex = i
-        else if (currentPosition >= sectionsPosition[i] && currentPosition < sectionsPosition[i + 1]) 
-            // section 구간에 있을 때
-            currentSectionIndex = i    
-    }
-
-    for (i = 0; i < sectionsPosition.length; i ++){
-        if (i == currentSectionIndex)
-            navbarMenuItems[i].classList.add('active')
-        else
-            navbarMenuItems[i].classList.remove('active')
-    }
-})
-
-
 // handle contactMe button
 const contactMeBtn = document.querySelector('.home__contact');
 contactMeBtn.addEventListener('click', () => {
@@ -139,12 +60,3 @@ document.addEventListener('scroll', () => {
         arrowBtn.classList.remove('visible');
     }
 });
-
-
-
-
-// Custom Method
-function scrollIntoViewSmooth(selector) {
-    const element = document.querySelector(selector);
-    element.scrollIntoView({behavior: "smooth"});
-}
